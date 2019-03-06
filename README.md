@@ -1,4 +1,4 @@
 # LeftAlignedFlowLayoutExample
 A simple example of using UICollectionViewFlowLayout
 
-![LeftAlignedFlowLayoutExample](leftAlignedFlowLayoutExample.png)
+![LeftAlignedFlowLayoutExample](tagsCollectionView.png.png)
