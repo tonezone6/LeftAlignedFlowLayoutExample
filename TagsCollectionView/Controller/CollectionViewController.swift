@@ -56,14 +56,13 @@ extension CollectionViewController: UICollectionViewDataSource {
 }
 
 class SelfsizingCollectionView: UICollectionView {
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if bounds.size != intrinsicContentSize {
+    override var contentSize: CGSize {
+        didSet {
             invalidateIntrinsicContentSize()
         }
     }
     override var intrinsicContentSize: CGSize {
-        return self.contentSize
+        return contentSize
     }
 }
 
