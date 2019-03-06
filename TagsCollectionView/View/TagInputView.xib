@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagInputView" customModule="TagsCollectionView" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="DWb-EC-5e4" id="xhd-l1-oIQ"/>
+                <outlet property="inputField" destination="gtI-eZ-u2w" id="ffr-Fu-Mu0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add fruit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-eZ-u2w" customClass="RoundedTextField" customModule="TagsCollectionView" customModuleProvider="target">
+                    <rect key="frame" x="10" y="10" width="355" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWb-EC-5e4">
+                    <rect key="frame" x="330" y="15" width="30" height="30"/>
+                    <color key="backgroundColor" red="0.16862745100000001" green="0.50588235290000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="W8H-Bv-4CB"/>
+                        <constraint firstAttribute="width" constant="30" id="ag0-qa-1cj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="addTag:" destination="-1" eventType="touchUpInside" id="7qh-Zh-aOm"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.90196078431372551" green="0.9137254901960784" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DWb-EC-5e4" firstAttribute="centerY" secondItem="gtI-eZ-u2w" secondAttribute="centerY" id="8er-RK-gRF"/>
+                <constraint firstItem="gtI-eZ-u2w" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="CWk-O5-T3v"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gtI-eZ-u2w" secondAttribute="bottom" constant="10" id="Ssr-WN-ipk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gtI-eZ-u2w" secondAttribute="trailing" constant="10" id="XPc-Qa-yLW"/>
+                <constraint firstItem="gtI-eZ-u2w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="nVP-kg-Hao"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DWb-EC-5e4" secondAttribute="trailing" constant="15" id="qm0-v6-EqE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-26.399999999999999" y="30.134932533733135"/>
+        </view>
+    </objects>
+</document>
