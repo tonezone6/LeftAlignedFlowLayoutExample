@@ -31,6 +31,10 @@ class ViewController: UIViewController, KeyboardObservable {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? CollectionViewController {
             collectionVC = destination
+            /*
+             Important note:
+             To make container view self sizing, use the below line of code
+             and also change the collection view bottom constraint priority from 1000 to 999 */
             destination.view.translatesAutoresizingMaskIntoConstraints = false
         }
     }
