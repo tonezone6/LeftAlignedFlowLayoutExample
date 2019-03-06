@@ -1,4 +1,4 @@
 # LeftAlignedFlowLayoutExample
-A simple example of using `UICollectionViewFlowLayout`. The `UICollectionView` contained by a container `UIView` and is self sizing.
+Example of using `UICollectionViewFlowLayout`. The self sizing `UICollectionView` is contained by a `UIView` container.
 
 ![LeftAlignedFlowLayoutExample](tagsCollectionView.png)
