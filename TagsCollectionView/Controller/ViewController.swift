@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, KeyboardObservable {
+class ViewController: UIViewController {
     
     var collectionVC: CollectionViewController?
     
@@ -22,13 +22,8 @@ class ViewController: UIViewController, KeyboardObservable {
         setup()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        unregisterFromKeyboardNotifications()
-    }
-    
-    // Get collection view child controller from container view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Getting collection view child controller from container view
         if let destination = segue.destination as? CollectionViewController {
             collectionVC = destination
             /*
@@ -37,6 +32,23 @@ class ViewController: UIViewController, KeyboardObservable {
              and also change the collection view bottom constraint priority from 1000 to 999 */
             destination.view.translatesAutoresizingMaskIntoConstraints = false
         }
+    }
+}
+
+extension ViewController: KeyboardObservable {
+    
+    func observeKeyboard() {
+        observeKeyboard { [unowned self] notification in
+            self.animateInputView(height: notification.keyboardHeight)
+            if notification.name == UIResponder.keyboardWillShowNotification {
+                self.scrollToBottom()
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardObserver()
     }
 }
 
@@ -51,12 +63,7 @@ extension ViewController: TagInputViewDelegate {
 extension ViewController {
     
     func setup() {
-        registerToKeyboardNotifications { [unowned self] notification in
-            self.animateInputView(height: notification.keyboardHeight)
-            if notification.name == UIResponder.keyboardWillShowNotification {
-                self.scrollToBottom()
-            }
-        }
+        observeKeyboard()
         configureTapToDismiss()
         tagInputView.delegate = self
     }

@@ -41,6 +41,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="bGM-km-4xc" firstAttribute="centerX" secondItem="IHM-hc-urm" secondAttribute="centerX" id="1gi-tT-X9E"/>
                                     <constraint firstItem="bGM-km-4xc" firstAttribute="leading" secondItem="IHM-hc-urm" secondAttribute="leading" constant="24" id="HkX-zA-Efa"/>
                                     <constraint firstAttribute="bottom" secondItem="bGM-km-4xc" secondAttribute="bottom" constant="24" id="TnK-cS-AaQ"/>
                                     <constraint firstItem="bGM-km-4xc" firstAttribute="top" secondItem="IHM-hc-urm" secondAttribute="top" constant="24" id="gfq-E4-5KZ"/>

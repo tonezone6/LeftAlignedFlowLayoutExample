@@ -23,7 +23,7 @@ extension Notification {
 protocol KeyboardObservable {}
 extension KeyboardObservable where Self: UIViewController {
     
-    func registerToKeyboardNotifications(handler: @escaping (_ notification: Notification) -> Void) {
+    func observeKeyboard(handler: @escaping (_ notification: Notification) -> Void) {
         NotificationCenter.default
         .addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { notification in
             handler(notification)
@@ -34,7 +34,7 @@ extension KeyboardObservable where Self: UIViewController {
         }
     }
     
-    func unregisterFromKeyboardNotifications() {
+    func removeKeyboardObserver() {
         NotificationCenter
         .default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter
