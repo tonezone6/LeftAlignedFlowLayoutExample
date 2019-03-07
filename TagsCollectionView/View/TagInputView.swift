@@ -36,7 +36,7 @@ class TagInputView: XibView {
     }
     
     private func setup() {
-        addButton.layer.cornerRadius = 15
+        addButton.layer.cornerRadius = 20
         inputField.delegate = self
     }
 }
